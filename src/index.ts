@@ -20,7 +20,7 @@ const server = new Server(
 );
 
 getTools(server);
-getPrompt(server);
+// getPrompt(server);
 
 // Start server
 async function runServer() {

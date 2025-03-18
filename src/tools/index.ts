@@ -2,6 +2,7 @@ import { ListToolsRequestSchema, CallToolRequestSchema } from "@modelcontextprot
 import GetTFSPrRefNamesTool from "./GetTFSPrRefNames.js";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { GenerateGitDiffTool } from "./GenerateGitDiff.js";
+import { PushCodeReviewReport } from "./PushCodeReviewReport.js";
 
 
 export function getTools(server: Server) {
@@ -9,6 +10,7 @@ export function getTools(server: Server) {
   const tools = [
     new GetTFSPrRefNamesTool(),
     new GenerateGitDiffTool(),
+    new PushCodeReviewReport(),
   ]
   
   // Tool handlers

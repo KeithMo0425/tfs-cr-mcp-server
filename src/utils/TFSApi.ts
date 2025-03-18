@@ -28,5 +28,24 @@ export class TFSApi {
     };
   }
 
+  async addPullRequestComment(id: number, comment: string) {
+    const gitApi = await this.getGitApi();
+    const pullRequestInfo = await gitApi.getPullRequestById(id);
 
+    if (!pullRequestInfo.repository) {
+      throw new Error("获取拉取请求信息失败");
+    }
+
+    const repository = pullRequestInfo.repository 
+
+    await gitApi.createThread({
+      comments: [{
+          content: comment
+      }]
+    }, repository.name!, id, repository.project!.name).then(thread => {
+        console.log("评论已创建:", thread);
+    });
+
+    return true;
+  }
 }

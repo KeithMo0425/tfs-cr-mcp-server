@@ -9,9 +9,6 @@ export function getPrompt(server: Server) {
 
   // List available prompts
   server.setRequestHandler(ListPromptsRequestSchema, async () => {
-    console.log('ListPromptsRequestSchema', {
-      prompts: PROMPTS.map(prompt => prompt.promptDefinition)
-    });
     return {
       prompts: PROMPTS.map(prompt => prompt.promptDefinition)
     };
