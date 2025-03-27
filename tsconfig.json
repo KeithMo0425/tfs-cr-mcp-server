@@ -8,7 +8,7 @@
     "resolveJsonModule": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "nodenext",
     "module": "NodeNext"
   },
   "include": ["./src/**/*"],
